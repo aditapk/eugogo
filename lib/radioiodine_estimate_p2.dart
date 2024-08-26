@@ -52,7 +52,7 @@ class _RiskFactorsForProgressionState extends State<RiskFactorsForProgression> {
     "สามารถกลืนแร่ได้เลยโดยไม่ต้องให้ steriod prophylaxis",
     "สามารถกลืนแร่ได้ โดยสามารถให้ low dose steriod prophylaxis คือ prednisolone 0.2-0.3 mg/kg/day taper off in 4-6 weeks, start ยาในวันที่กลืนแร่",
     "สามารถกลืนแร่ได้ โดยให้ standard steroid prophylaxis คือ prednisolone 0.4-0.5 mg/kg/day taper off in 3 months, start ยาในวันที่กลืนแร่",
-    "ยังไม่ควรกลืนแร่ในขณะนี้",
+    //"ยังไม่ควรกลืนแร่ในขณะนี้",
   ];
   @override
   Widget build(BuildContext context) {
@@ -93,15 +93,16 @@ class _RiskFactorsForProgressionState extends State<RiskFactorsForProgression> {
                   Get.to(() => ResultOfRadioiodineEstimation(
                         text: treatmentList[2],
                       ));
-                } else if (widget.goState == severeOfGOList[4]) {
-                  Get.to(() => ResultOfRadioiodineEstimation(
-                        text: treatmentList[3],
-                      ));
-                } else if (widget.goState == severeOfGOList[2]) {
-                  Get.to(() => ResultOfRadioiodineEstimation(
-                        text: treatmentList[3],
-                      ));
                 }
+                // else if (widget.goState == severeOfGOList[4]) {
+                //   Get.to(() => ResultOfRadioiodineEstimation(
+                //         text: treatmentList[3],
+                //       ));
+                // } else if (widget.goState == severeOfGOList[2]) {
+                //   Get.to(() => ResultOfRadioiodineEstimation(
+                //         text: treatmentList[3],
+                //       ));
+                // }
               },
               child: const Text("Next"))
         ],

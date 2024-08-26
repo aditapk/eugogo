@@ -30,10 +30,6 @@ class _MildModulateGOScreenState extends State<MildModulateGOScreen> {
   bool diplopiaNoOrIntermittent = false;
   bool diplopiaInconstantOrConstant = false;
 
-  // isSelected(){
-  //   List<
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

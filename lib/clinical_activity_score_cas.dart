@@ -1,3 +1,4 @@
+import 'package:eugogo/models/patient_profile_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -38,6 +39,7 @@ class _ClinicalActivityScoreScreenState
     false,
     false
   ];
+  final PatientProfileModel patientStateController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,12 +57,20 @@ class _ClinicalActivityScoreScreenState
                     int nSelected =
                         firstEstimateChoices.where((element) => element).length;
                     if (nSelected >= 3) {
+                      // update state
+                      patientStateController.lastEstimate =
+                          "Modulate-to-Severe-GO-active";
+
                       Get.to(
                         () => const ResultOfModerateToSevereGO(
                           activeState: true,
                         ),
                       );
                     } else {
+                      // update state
+                      patientStateController.lastEstimate =
+                          "Modulate-to-Severe-GO-inactive";
+
                       Get.to(
                         () => const ResultOfModerateToSevereGO(
                           activeState: false,
@@ -71,12 +81,18 @@ class _ClinicalActivityScoreScreenState
                     int nSelected =
                         againEstimateChoices.where((element) => element).length;
                     if (nSelected >= 4) {
+                      // update state
+                      patientStateController.lastEstimate =
+                          "Modulate-to-Severe-GO-active";
                       Get.to(
                         () => const ResultOfModerateToSevereGO(
                           activeState: true,
                         ),
                       );
                     } else {
+                      // update state
+                      patientStateController.lastEstimate =
+                          "Modulate-to-Severe-GO-inactive";
                       Get.to(
                         () => const ResultOfModerateToSevereGO(
                           activeState: false,

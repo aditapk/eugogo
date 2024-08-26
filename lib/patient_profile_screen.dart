@@ -47,6 +47,9 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
               style: TextStyle(fontSize: 18),
             ),
             onPressed: () {
+              // no record
+
+              // go to next page
               Get.to(() => const ChooseEstimationTopic());
             },
           )
@@ -58,46 +61,46 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              MyTextField(
-                title: "HN",
-                controller: hnController,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                      child: MyTextField(
-                    title: "ชื่อ",
-                    controller: nameController,
-                  )),
-                  Expanded(
-                    child: MyTextField(
-                      title: "นามสกุล",
-                      controller: surnameController,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                      child: MyTextField(
-                    title: "อายุ",
-                    controller: ageController,
-                  )),
-                  Expanded(
-                    child: MyTextField(
-                      title: "เพศ",
-                      controller: genderController,
-                    ),
-                  ),
-                  Expanded(
-                    child: MyTextField(
-                      title: "เชื้อชาติ",
-                      controller: nationalityController,
-                    ),
-                  ),
-                ],
-              ),
+              // MyTextField(
+              //   title: "HN",
+              //   controller: hnController,
+              // ),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //         child: MyTextField(
+              //       title: "ชื่อ",
+              //       controller: nameController,
+              //     )),
+              //     Expanded(
+              //       child: MyTextField(
+              //         title: "นามสกุล",
+              //         controller: surnameController,
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //         child: MyTextField(
+              //       title: "อายุ",
+              //       controller: ageController,
+              //     )),
+              //     Expanded(
+              //       child: MyTextField(
+              //         title: "เพศ",
+              //         controller: genderController,
+              //       ),
+              //     ),
+              //     Expanded(
+              //       child: MyTextField(
+              //         title: "เชื้อชาติ",
+              //         controller: nationalityController,
+              //       ),
+              //     ),
+              //   ],
+              // ),
               // section - Orbitopathy
               const Padding(
                 padding: EdgeInsets.only(left: 8.0, right: 8.0),
@@ -250,13 +253,23 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
               ),
               SizedBox(
                   width: double.infinity,
-                  height: 40,
+                  height: 50,
                   child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green.shade100),
                       onPressed: () {
-                        //print("บันทึกข้อมูล");
+                        // record
+
+                        // go to next page
                         Get.to(() => const ChooseEstimationTopic());
                       },
-                      child: const Text('บันทึกข้อมูล')))
+                      child: const Text(
+                        'บันทึกข้อมูล',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                        ),
+                      )))
             ],
           ),
         ),

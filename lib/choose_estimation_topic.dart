@@ -29,16 +29,16 @@ class _ChooseEstimationTopicState extends State<ChooseEstimationTopic> {
                 ? Center(
                     child: Column(
                       children: [
-                        SizedBox(
-                          height: width * 0.05,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 20, bottom: 20),
-                          child: Text(
-                            "<ข้อความที่ 1>",
-                            style: TextStyle(fontSize: 30),
-                          ),
-                        ),
+                        // SizedBox(
+                        //   height: width * 0.05,
+                        // ),
+                        // const Padding(
+                        //   padding: EdgeInsets.only(top: 20, bottom: 20),
+                        //   child: Text(
+                        //     "<ข้อความที่ 1>",
+                        //     style: TextStyle(fontSize: 30),
+                        //   ),
+                        // ),
                         MyButton(
                           width: width * 0.9,
                           height: height * 0.25,
@@ -71,13 +71,13 @@ class _ChooseEstimationTopicState extends State<ChooseEstimationTopic> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.only(top: 20, bottom: 20),
-                          child: Text(
-                            "<ข้อความที่ 1>",
-                            style: TextStyle(fontSize: 30),
-                          ),
-                        ),
+                        // const Padding(
+                        //   padding: EdgeInsets.only(top: 20, bottom: 20),
+                        //   child: Text(
+                        //     "<ข้อความที่ 1>",
+                        //     style: TextStyle(fontSize: 30),
+                        //   ),
+                        // ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

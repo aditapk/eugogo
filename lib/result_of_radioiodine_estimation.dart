@@ -37,10 +37,14 @@ class ResultOfRadioiodineEstimation extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Center(
-                child: Text(
-                  text ?? "untitle",
-                  style: const TextStyle(
-                    fontSize: 20,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: Text(
+                    text ?? "untitle",
+                    style: const TextStyle(
+                      fontSize: 20,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -49,7 +53,10 @@ class ResultOfRadioiodineEstimation extends StatelessWidget {
           Container(
               alignment: Alignment.bottomCenter,
               padding: const EdgeInsets.all(10),
-              child: Center(child: Text(referenceText))),
+              child: Center(
+                  child: SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      child: Text(referenceText)))),
         ],
       ),
     );

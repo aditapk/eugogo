@@ -1,7 +1,9 @@
+import 'package:eugogo/models/patient_profile_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'radioiodine_estimate_p2.dart';
+import 'result_of_radioiodine_estimation.dart';
 
 class RadioiodineEstimatePage1 extends StatefulWidget {
   const RadioiodineEstimatePage1({super.key});
@@ -12,7 +14,7 @@ class RadioiodineEstimatePage1 extends StatefulWidget {
 }
 
 class _RadioiodineEstimatePage1State extends State<RadioiodineEstimatePage1> {
-  String goSelected = "";
+  late String goSelected;
   List<String> severeOfGOList = [
     "No GO",
     "Mild GO",
@@ -20,6 +22,25 @@ class _RadioiodineEstimatePage1State extends State<RadioiodineEstimatePage1> {
     "Moderate to Severe GO,\ninactive",
     "Moderate to Severe GO,\nactive"
   ];
+  Map<String, String> severeMap = {
+    "No-GO": "No GO",
+    "Mild-GO": "Mild GO",
+    "Sight-threatening-GO": "Sight-Threatening GO",
+    "Modulate-to-Severe-GO-active": "Moderate to Severe GO,\nactive",
+    "Modulate-to-Severe-GO-inactive": "Moderate to Severe GO,\ninactive",
+  };
+
+  final PatientProfileModel patientStateController = Get.find();
+  @override
+  void initState() {
+    super.initState();
+    if (patientStateController.lastEstimate != null) {
+      // auto state selection
+      goSelected = severeMap[patientStateController.lastEstimate]!;
+    } else {
+      goSelected = "";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +52,18 @@ class _RadioiodineEstimatePage1State extends State<RadioiodineEstimatePage1> {
           TextButton(
               onPressed: () {
                 if (goSelected.isNotEmpty) {
-                  Get.to(
-                    () => RiskFactorsForProgression(
-                      goState: goSelected,
-                    ),
-                  );
+                  if (goSelected == severeOfGOList[2] ||
+                      goSelected == severeOfGOList[4]) {
+                    Get.to(() => const ResultOfRadioiodineEstimation(
+                          text: "ยังไม่ควรกลืนแร่ในขณะนี้",
+                        ));
+                  } else {
+                    Get.to(
+                      () => RiskFactorsForProgression(
+                        goState: goSelected,
+                      ),
+                    );
+                  }
                 }
               },
               child: const Text('Next'))
@@ -54,7 +82,7 @@ class _RadioiodineEstimatePage1State extends State<RadioiodineEstimatePage1> {
                     children: severeOfGOList.map((e) {
                       return Padding(
                         padding:
-                            const EdgeInsets.only(top: 20, left: 20, right: 20),
+                            const EdgeInsets.only(top: 10, left: 10, right: 10),
                         child: MyCard(
                           height: (height - (20 * 5) - 20) / 5,
                           text: e,

@@ -1,6 +1,7 @@
 import 'package:eugogo/choose_estimation_topic.dart';
 import 'package:eugogo/figure1_result_of_mild_go.dart';
 import 'package:eugogo/figure4_result_of_sight_threatening_go.dart';
+import 'package:eugogo/models/patient_profile_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,6 +32,14 @@ class _ResultOfEstimationGOState extends State<ResultOfEstimationGO> {
     "Modulate to Severe GO",
     "Sight threatening GO",
   ];
+  final PatientProfileModel patientStateController = Get.find();
+
+  @override
+  void initState() {
+    super.initState();
+    // update last estimation
+    patientStateController.lastEstimate = widget.estimated;
+  }
 
   @override
   Widget build(BuildContext context) {

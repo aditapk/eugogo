@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'user_login_screen.dart';
+import 'models/patient_profile_model.dart';
+import 'patient_profile_screen.dart';
 
 void main() {
+  Get.put(PatientProfileModel());
   runApp(const MyApp());
 }
 
@@ -19,27 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:
-          // ResultOfEstimationGO(
-          //   estimated: "No-GO",
-          // ),
-          //MildModulateGOScreen(),
-          // SeverityOfGOScreen(),
-          //const PatientProfileScreen(title: 'ข้อมูลผู้ป่วย'),
-          const UserLoginScreen(),
-      //const SeverityOfGOScreen(),
-      //const MildModulateGOScreen(),
-      //const ClinicalActivityScoreScreen(),
-      //const ChooseEstimationTopic(),
-      //SeverityOfGOScreen(),
-      //const RadioiodineEstimatePage1(),
-
-      //const ResultOfRadioiodineEstimation(),
-      //const RadioiodineEstimatePage1(),
-
-      //ClinicalActivityScoreScreen(),
-      //ResultOfMildGO(),
-      //ResultOfSightThreatenningGO(),
+      home: const PatientProfileScreen(title: 'ข้อมูลผู้ป่วย'), // no login page
     );
   }
 }
