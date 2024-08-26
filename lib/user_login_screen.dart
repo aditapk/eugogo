@@ -79,7 +79,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
                     onPressed: () {
                       if (username.text == "admin" && password.text == "1234") {
                         Get.to(() =>
-                            const PatientProfileScreen(title: 'ข้อมูลผู้ป่วย'));
+                            const PatientProfileScreen(title: 'ข้อมูลผู้ป่วย'), routeName: 'patient-profile');
                       }
                     },
                     child: const Text(

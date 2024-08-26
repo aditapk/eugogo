@@ -56,12 +56,13 @@ class _RadioiodineEstimatePage1State extends State<RadioiodineEstimatePage1> {
                       goSelected == severeOfGOList[4]) {
                     Get.to(() => const ResultOfRadioiodineEstimation(
                           text: "ยังไม่ควรกลืนแร่ในขณะนี้",
-                        ));
+                        ), routeName: 'result-of-radioiodine-estimation');
                   } else {
                     Get.to(
                       () => RiskFactorsForProgression(
                         goState: goSelected,
                       ),
+                      routeName: 'risk-factor-for-progression'
                     );
                   }
                 }

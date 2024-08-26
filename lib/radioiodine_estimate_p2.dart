@@ -67,32 +67,32 @@ class _RiskFactorsForProgressionState extends State<RiskFactorsForProgression> {
                     riskFactorStateList[3] == true) {
                   Get.to(() => ResultOfRadioiodineEstimation(
                         text: treatmentList[0],
-                      ));
+                      ), routeName: 'result-of-radioiodine-estimation');
                 } else if (widget.goState == severeOfGOList[0] &&
                     riskFactorStateList[3] == false) {
                   Get.to(() => ResultOfRadioiodineEstimation(
                         text: treatmentList[1],
-                      ));
+                      ), routeName: 'result-of-radioiodine-estimation');
                 } else if (widget.goState == severeOfGOList[1] &&
                     riskFactorStateList[3] == true) {
                   Get.to(() => ResultOfRadioiodineEstimation(
                         text: treatmentList[1],
-                      ));
+                      ),routeName: 'result-of-radioiodine-estimation');
                 } else if (widget.goState == severeOfGOList[3] &&
                     riskFactorStateList[3] == true) {
                   Get.to(() => ResultOfRadioiodineEstimation(
                         text: treatmentList[1],
-                      ));
+                      ),routeName: 'result-of-radioiodine-estimation');
                 } else if (widget.goState == severeOfGOList[1] &&
                     riskFactorStateList[3] == false) {
                   Get.to(() => ResultOfRadioiodineEstimation(
                         text: treatmentList[2],
-                      ));
+                      ),routeName: 'result-of-radioiodine-estimation');
                 } else if (widget.goState == severeOfGOList[3] &&
                     riskFactorStateList[3] == false) {
                   Get.to(() => ResultOfRadioiodineEstimation(
                         text: treatmentList[2],
-                      ));
+                      ),routeName: 'result-of-radioiodine-estimation');
                 }
                 // else if (widget.goState == severeOfGOList[4]) {
                 //   Get.to(() => ResultOfRadioiodineEstimation(

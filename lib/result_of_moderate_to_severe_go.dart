@@ -21,7 +21,7 @@ class ResultOfModerateToSevereGO extends StatelessWidget {
         actions: [
           TextButton(
               onPressed: () {
-                Get.to(const ChooseEstimationTopic());
+                Get.to(()=>const ChooseEstimationTopic(), routeName: 'choose-estimation-topic');
               },
               child: const Text("Next"))
         ],

@@ -51,7 +51,7 @@ class _ResultOfEstimationGOState extends State<ResultOfEstimationGO> {
             ? [
                 TextButton(
                     onPressed: () {
-                      Get.to(const ChooseEstimationTopic());
+                      Get.to(()=>const ChooseEstimationTopic(), routeName: 'choose-estimation-topic');
                     },
                     child: const Text("Next"))
               ]
@@ -99,7 +99,7 @@ class _ResultOfEstimationGOState extends State<ResultOfEstimationGO> {
                             onPressed: "Mild-GO" == widget.estimated
                                 ? () {
                                     //print("Management Algorithm (Figure 1)");
-                                    Get.to(() => const ResultOfMildGO());
+                                    Get.to(() => const ResultOfMildGO(),routeName: 'result-of-mild-go');
                                   }
                                 : null,
                           ),
@@ -117,7 +117,7 @@ class _ResultOfEstimationGOState extends State<ResultOfEstimationGO> {
                                     ? () {
                                         //print('ประเมิน CAS Score');
                                         Get.to(() =>
-                                            const ClinicalActivityScoreScreen());
+                                            const ClinicalActivityScoreScreen(), routeName: 'clinical-activity-score');
                                       }
                                     : null,
                           ),
@@ -135,7 +135,7 @@ class _ResultOfEstimationGOState extends State<ResultOfEstimationGO> {
                                     ? () {
                                         //print('Managment Algorithm (Figure 4)');
                                         Get.to(() =>
-                                            const ResultOfSightThreatenningGO());
+                                            const ResultOfSightThreatenningGO(), routeName: 'result-of-sight-threatening-go');
                                       }
                                     : null,
                           ),
@@ -182,7 +182,7 @@ class _ResultOfEstimationGOState extends State<ResultOfEstimationGO> {
                                 onPressed: "Mild-GO" == widget.estimated
                                     ? () {
                                         //print("Management Algorithm (Figure 1)");
-                                        Get.to(() => const ResultOfMildGO());
+                                        Get.to(() => const ResultOfMildGO(), routeName: 'result-of-mild-go');
                                       }
                                     : null,
                               ),
@@ -195,7 +195,7 @@ class _ResultOfEstimationGOState extends State<ResultOfEstimationGO> {
                                         ? () {
                                             //print('ประเมิน CAS Score');
                                             Get.to(() =>
-                                                const ClinicalActivityScoreScreen());
+                                                const ClinicalActivityScoreScreen(), routeName: 'clinical-activity-score');
                                           }
                                         : null,
                               ),
@@ -208,7 +208,7 @@ class _ResultOfEstimationGOState extends State<ResultOfEstimationGO> {
                                         ? () {
                                             //print('Managment Algorithm (Figure 4)');
                                             Get.to(() =>
-                                                const ResultOfSightThreatenningGO());
+                                                const ResultOfSightThreatenningGO(), routeName: 'result-of-sight-threatenning-go');
                                           }
                                         : null,
                               ),

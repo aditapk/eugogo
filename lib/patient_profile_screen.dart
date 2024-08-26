@@ -50,7 +50,7 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
               // no record
 
               // go to next page
-              Get.to(() => const ChooseEstimationTopic());
+              Get.to(() => const ChooseEstimationTopic(), routeName: 'choose-estimation-topic');
             },
           )
         ],
@@ -261,7 +261,7 @@ class _PatientProfileScreenState extends State<PatientProfileScreen> {
                         // record
 
                         // go to next page
-                        Get.to(() => const ChooseEstimationTopic());
+                        Get.to(() => const ChooseEstimationTopic(), routeName: 'choose-estimation-topic');
                       },
                       child: const Text(
                         'บันทึกข้อมูล',

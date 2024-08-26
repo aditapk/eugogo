@@ -65,6 +65,7 @@ class _ClinicalActivityScoreScreenState
                         () => const ResultOfModerateToSevereGO(
                           activeState: true,
                         ),
+                        routeName: 'result-of-moderate-to-servere-go'
                       );
                     } else {
                       // update state
@@ -75,6 +76,7 @@ class _ClinicalActivityScoreScreenState
                         () => const ResultOfModerateToSevereGO(
                           activeState: false,
                         ),
+                        routeName: 'result-of-moderate-to-servere-go'
                       );
                     }
                   } else {
@@ -88,6 +90,7 @@ class _ClinicalActivityScoreScreenState
                         () => const ResultOfModerateToSevereGO(
                           activeState: true,
                         ),
+                        routeName: 'result-of-moderate-to-servere-go'
                       );
                     } else {
                       // update state
@@ -97,6 +100,7 @@ class _ClinicalActivityScoreScreenState
                         () => const ResultOfModerateToSevereGO(
                           activeState: false,
                         ),
+                        routeName: 'result-of-moderate-to-servere-go'
                       );
                     }
                   }

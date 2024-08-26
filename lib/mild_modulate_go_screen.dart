@@ -61,16 +61,16 @@ class _MildModulateGOScreenState extends State<MildModulateGOScreen> {
 
                   if (nSelected >= 2) {
                     Get.to(() => const ResultOfEstimationGO(
-                        estimated: "Modulate-to-Severe-GO"));
+                        estimated: "Modulate-to-Severe-GO"), routeName: 'result-of-estimation-go');
                   } else {
                     if (allItemList.any(
                       (element) => element,
                     )) {
                       Get.to(() =>
-                          const ResultOfEstimationGO(estimated: "Mild-GO"));
+                          const ResultOfEstimationGO(estimated: "Mild-GO"), routeName: 'result-of-estimation-go');
                     } else {
                       Get.to(
-                          () => const ResultOfEstimationGO(estimated: "No-GO"));
+                          () => const ResultOfEstimationGO(estimated: "No-GO"), routeName: 'result-of-estimation-go');
                     }
                   }
                 },

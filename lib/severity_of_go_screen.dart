@@ -78,11 +78,11 @@ class _SeverityOfGOScreenState extends State<SeverityOfGOScreen> {
                     abnormalStateList.any((state) => state)) {
                   // Go to severity page
                   Get.to(() => const ResultOfEstimationGO(
-                      estimated: 'Sight-threatening-GO'));
+                      estimated: 'Sight-threatening-GO'), routeName: 'result-of-estimiation-go');
                   //print("Sight Threatening");
                 } else {
                   // Go to check next page
-                  Get.to(() => const MildModulateGOScreen());
+                  Get.to(() => const MildModulateGOScreen(), routeName: 'mild-modulate-go');
                   //print('Next Page');
                 }
               },

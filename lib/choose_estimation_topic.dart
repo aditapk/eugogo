@@ -46,7 +46,7 @@ class _ChooseEstimationTopicState extends State<ChooseEstimationTopic> {
                               "Severity of Grave's Ophthalmopathy and Management Guideline",
                           fontSize: 24,
                           onPressed: () {
-                            Get.to(() => const SeverityOfGOScreen());
+                            Get.to(() => const SeverityOfGOScreen(), routeName: "severity-of-screen");
                           },
                         ),
                         SizedBox(
@@ -59,7 +59,7 @@ class _ChooseEstimationTopicState extends State<ChooseEstimationTopic> {
                               "Glucocorticoid Regimens for Prevention of Grave's Ophthalmopathy Progresssion Following Radioiodine Treatment",
                           fontSize: 24,
                           onPressed: () {
-                            Get.to(() => const RadioiodineEstimatePage1());
+                            Get.to(() => const RadioiodineEstimatePage1(),routeName: "radioiodine-estimate1");
                           },
                         ),
                       ],
@@ -88,7 +88,7 @@ class _ChooseEstimationTopicState extends State<ChooseEstimationTopic> {
                                   "Severity of Grave's Ophthalmopathy and Management Guideline",
                               fontSize: 20,
                               onPressed: () {
-                                Get.to(() => const SeverityOfGOScreen());
+                                Get.to(() => const SeverityOfGOScreen(), routeName: 'severity-of-screen');
                               },
                             ),
                             SizedBox(
@@ -101,7 +101,7 @@ class _ChooseEstimationTopicState extends State<ChooseEstimationTopic> {
                                   "Glucocorticoid Regimens for Prevention of Grave's Ophthalmopathy Progresssion Following Radioiodine Treatment",
                               fontSize: 20,
                               onPressed: () {
-                                Get.to(() => const RadioiodineEstimatePage1());
+                                Get.to(() => const RadioiodineEstimatePage1(), routeName: 'radioiodine-estimate1');
                               },
                             ),
                           ],
