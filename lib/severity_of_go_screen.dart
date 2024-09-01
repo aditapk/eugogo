@@ -100,517 +100,519 @@ class _SeverityOfGOScreenState extends State<SeverityOfGOScreen> {
                     height: height,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "Sight threatening of Grave's Orbitopathy (GO)",
-                            style: TextStyle(fontSize: 17),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.only(left: 8.0, right: 8.0),
-                            child: DividedSection(
-                              text: "VA",
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "Sight threatening of Grave's Orbitopathy (GO)",
+                              style: TextStyle(fontSize: 17),
                             ),
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                  child: MyTextField(
-                                title: 'Rt',
-                                controller: vARtController,
-                              )),
-                              Expanded(
-                                  child: MyTextField(
-                                title: "Lt",
-                                controller: vALtController,
-                              )),
-                            ],
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 8.0, right: 8.0),
-                            child: Row(
-                              children: [
-                                const Text(
-                                  'VA drop ลงหรือไม่',
-                                  style: TextStyle(fontSize: 18),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                        child: MyCheckbox(
-                                            text: "YES",
-                                            value: vADropYesState,
-                                            onChanged: (state) {
-                                              if (state!) {
-                                                // set YES state and clear NO state
-                                                setState(() {
-                                                  vADropYesState = state;
-                                                  vADropNoState = !state;
-                                                });
-                                              } else {
-                                                // clear YES state only
-                                                setState(() {
-                                                  vADropYesState = state;
-                                                });
-                                              }
-                                            }),
-                                      ),
-                                      Expanded(
-                                        child: MyCheckbox(
-                                          text: "NO",
-                                          value: vADropNoState,
-                                          onChanged: (state) {
-                                            if (state!) {
-                                              // set NO state and clear YES state
-                                              setState(() {
-                                                vADropNoState = state;
-                                                vADropYesState = !state;
-                                              });
-                                            } else {
-                                              // clear NO state only
-                                              setState(() {
-                                                vADropNoState = state;
-                                              });
-                                            }
-                                          },
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
+                            const SizedBox(
+                              height: 20,
                             ),
-                          ),
-                          const Padding(
-                            padding:
-                                EdgeInsets.only(left: 8.0, right: 8.0, top: 10),
-                            child: DividedSection(
-                              text: "Color",
-                            ),
-                          ),
-                          // Rt - Normal, AbNormal
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8, right: 8),
-                            child: Row(
-                              children: [
-                                const Text(
-                                  "Rt.",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                    value: colorRtNormalState,
-                                    onChanged: (state) {
-                                      if (state!) {
-                                        setState(() {
-                                          // set normal state and clear abnormal state
-                                          colorRtNormalState =
-                                              state; // normal state
-                                          colorRtAbnormalState =
-                                              !state; // abnormal state
-                                        });
-                                      } else {
-                                        setState(() {
-                                          // clear normal state only
-                                          colorRtNormalState = state;
-                                        });
-                                      }
-                                    },
-                                    text: "Normal",
-                                  ),
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                    value: colorRtAbnormalState,
-                                    onChanged: (state) {
-                                      if (state!) {
-                                        setState(() {
-                                          // set abnormal state and clear normal state
-                                          colorRtAbnormalState =
-                                              state; // normal state
-                                          colorRtNormalState =
-                                              !state; // abnormal state
-                                        });
-                                      } else {
-                                        setState(() {
-                                          // clear abnormal state only
-                                          colorRtAbnormalState = state;
-                                        });
-                                      }
-                                    },
-                                    text: "Abnormal",
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 8.0, right: 8.0),
-                            child: Row(
-                              children: [
-                                const Text(
-                                  "Lt.",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                    value: colorLtNormalState,
-                                    onChanged: (state) {
-                                      if (state!) {
-                                        // set Lt Normal state and clear Lt Abnormal state
-                                        setState(() {
-                                          colorLtNormalState = state;
-                                          colorLtAbnormalState = !state;
-                                        });
-                                      } else {
-                                        // clear Lt Normal state only
-                                        setState(() {
-                                          colorLtNormalState = state;
-                                        });
-                                      }
-                                    },
-                                    text: "Normal",
-                                  ),
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                    value: colorLtAbnormalState,
-                                    onChanged: (state) {
-                                      if (state!) {
-                                        // set Lt Abnormal state and clear Lt Normal state
-                                        setState(() {
-                                          colorLtAbnormalState = state;
-                                          colorLtNormalState = !state;
-                                        });
-                                      } else {
-                                        // clear Lt Abnormal only
-                                        setState(() {
-                                          colorLtAbnormalState = state;
-                                        });
-                                      }
-                                    },
-                                    text: "Abnormal",
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          // Optic - nerve
-                          const Padding(
-                            padding:
-                                EdgeInsets.only(left: 8.0, right: 8.0, top: 10),
-                            child: DividedSection(
-                              text: "Optic nerve",
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 8.0, right: 8.0),
-                            child: Row(
-                              children: [
-                                const SizedBox(
-                                  width: 90,
-                                  child: Text(
-                                    'Rt. edema',
-                                    style: TextStyle(fontSize: 18),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                      text: "YES",
-                                      value: opticNerveRtEdemaYesState,
-                                      onChanged: (state) {
-                                        if (state!) {
-                                          // set Rt. edema Yes state and clear Rt. edema No state
-                                          setState(() {
-                                            opticNerveRtEdemaYesState = state;
-                                            opticNerveRtEdemaNoState = !state;
-                                          });
-                                        } else {
-                                          // clear Rt. edema Yes state
-                                          setState(() {
-                                            opticNerveRtEdemaYesState = state;
-                                          });
-                                        }
-                                      }),
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                      text: "NO",
-                                      value: opticNerveRtEdemaNoState,
-                                      onChanged: (state) {
-                                        if (state!) {
-                                          // set Rt. edema No state and clear Rt. edema Yes state
-                                          setState(() {
-                                            opticNerveRtEdemaNoState = state;
-                                            opticNerveRtEdemaYesState = !state;
-                                          });
-                                        } else {
-                                          // clear Rt. edema No state only
-                                          setState(() {
-                                            opticNerveRtEdemaNoState = state;
-                                          });
-                                        }
-                                      }),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 8.0, right: 8.0),
-                            child: Row(
-                              children: [
-                                const SizedBox(
-                                  width: 90,
-                                  child: Text(
-                                    'Lt. edema',
-                                    style: TextStyle(fontSize: 18),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                      text: "YES",
-                                      value: opticNerveLtEdemaYesState,
-                                      onChanged: (state) {
-                                        if (state!) {
-                                          // set Lt. edema Yes state and clear Lt. edema No state
-                                          setState(() {
-                                            opticNerveLtEdemaYesState = state;
-                                            opticNerveLtEdemaNoState = !state;
-                                          });
-                                        } else {
-                                          // clear Lt. edema Yes state only
-                                          setState(() {
-                                            opticNerveLtEdemaYesState = state;
-                                          });
-                                        }
-                                      }),
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                      text: "NO",
-                                      value: opticNerveLtEdemaNoState,
-                                      onChanged: (state) {
-                                        if (state!) {
-                                          // set Lt. edema No state and clear Lt. edema Yes state
-                                          setState(() {
-                                            opticNerveLtEdemaNoState = state;
-                                            opticNerveLtEdemaYesState = !state;
-                                          });
-                                        } else {
-                                          // clear Lt. edema No state only
-                                          setState(() {
-                                            opticNerveLtEdemaNoState = state;
-                                          });
-                                        }
-                                      }),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 8.0, right: 8.0, top: 10),
-                            child: Row(
-                              children: [
-                                const SizedBox(
-                                  width: 90,
-                                  child: Text(
-                                    'Rt. pale',
-                                    style: TextStyle(fontSize: 18),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                      text: "YES",
-                                      value: opticNerveRtPaleYesState,
-                                      onChanged: (state) {
-                                        if (state!) {
-                                          // set Rt. pale Yes state and clear Rt. pale No state
-                                          setState(() {
-                                            opticNerveRtPaleYesState = state;
-                                            opticNerveRtPaleNoState = !state;
-                                          });
-                                        } else {
-                                          // clear Rt. pale Yes state only
-                                          setState(() {
-                                            opticNerveRtPaleYesState = state;
-                                          });
-                                        }
-                                      }),
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                      text: "NO",
-                                      value: opticNerveRtPaleNoState,
-                                      onChanged: (state) {
-                                        if (state!) {
-                                          // set Rt. pale No state and clear Rt. pale Yes state
-                                          setState(() {
-                                            opticNerveRtPaleNoState = state;
-                                            opticNerveRtPaleYesState = !state;
-                                          });
-                                        } else {
-                                          // clear Rt. pale No state only
-                                          setState(() {
-                                            opticNerveRtPaleNoState = state;
-                                          });
-                                        }
-                                      }),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 8.0, right: 8.0),
-                            child: Row(
-                              children: [
-                                const SizedBox(
-                                  width: 90,
-                                  child: Text(
-                                    'Lt. pale',
-                                    style: TextStyle(fontSize: 18),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                      text: "YES",
-                                      value: opticNerveLtPaleYesState,
-                                      onChanged: (state) {
-                                        if (state!) {
-                                          // set Lt. pale Yes state and clear Lt. pale No state
-                                          setState(() {
-                                            opticNerveLtPaleYesState = state;
-                                            opticNerveLtPaleNoState = !state;
-                                          });
-                                        } else {
-                                          // clear Lt. pale Yes state only
-                                          setState(() {
-                                            opticNerveLtPaleYesState = state;
-                                          });
-                                        }
-                                      }),
-                                ),
-                                Expanded(
-                                  child: MyCheckbox(
-                                      text: "No",
-                                      value: opticNerveLtPaleNoState,
-                                      onChanged: (state) {
-                                        if (state!) {
-                                          // set Lt. pale No state and clear Lt. pale Yes state
-                                          setState(() {
-                                            opticNerveLtPaleNoState = state;
-                                            opticNerveLtPaleYesState = !state;
-                                          });
-                                        } else {
-                                          // clear Lt. pale No state only
-                                          setState(() {
-                                            opticNerveLtPaleNoState = state;
-                                          });
-                                        }
-                                      }),
-                                ),
-                              ],
-                            ),
-                          ),
-                          // Conea
-                          const Padding(
-                            padding:
-                                EdgeInsets.only(left: 8.0, right: 8.0, top: 10),
-                            child: DividedSection(
-                              text: "Coneas",
-                            ),
-                          ),
-                          const Padding(
-                            padding:
-                                EdgeInsets.only(left: 8.0, right: 8.0, top: 5),
-                            child: Text(
-                              'พบว่ามี exposure keratitis หรือ corneal abrasion หรือ corneal ulcev จากภาวะไทรอยด์ขึ้นตา',
-                              style: TextStyle(
-                                fontSize: 18,
+                            const Padding(
+                              padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                              child: DividedSection(
+                                text: "VA",
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 8, right: 8, top: 10),
-                            child: Row(
+                            Row(
                               children: [
-                                MyCheckbox(
-                                    text: "YES",
-                                    value: corneaYesState,
-                                    onChanged: (state) {
-                                      if (state!) {
-                                        // set cornea Yes state and clear cornea No state
-                                        setState(() {
-                                          corneaYesState = state;
-                                          corneaNoState = !state;
-                                        });
-                                      } else {
-                                        // clear cornea Yes state only
-                                        setState(() {
-                                          corneaYesState = state;
-                                        });
-                                      }
-                                    }),
-                                const SizedBox(
-                                  width: 40,
-                                ),
-                                MyCheckbox(
-                                    text: "NO",
-                                    value: corneaNoState,
-                                    onChanged: (state) {
-                                      if (state!) {
-                                        // set cornea No state and clear cornea Yes state
-                                        setState(() {
-                                          corneaNoState = state;
-                                          corneaYesState = !state;
-                                        });
-                                      } else {
-                                        // clear cornea No state
-                                        setState(() {
-                                          corneaNoState = state;
-                                        });
-                                      }
-                                    }),
+                                Expanded(
+                                    child: MyTextField(
+                                  title: 'Rt',
+                                  controller: vARtController,
+                                )),
+                                Expanded(
+                                    child: MyTextField(
+                                  title: "Lt",
+                                  controller: vALtController,
+                                )),
                               ],
                             ),
-                          )
-                        ],
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, right: 8.0),
+                              child: Row(
+                                children: [
+                                  const Text(
+                                    'VA drop ลงหรือไม่',
+                                    style: TextStyle(fontSize: 18),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          child: MyCheckbox(
+                                              text: "YES",
+                                              value: vADropYesState,
+                                              onChanged: (state) {
+                                                if (state!) {
+                                                  // set YES state and clear NO state
+                                                  setState(() {
+                                                    vADropYesState = state;
+                                                    vADropNoState = !state;
+                                                  });
+                                                } else {
+                                                  // clear YES state only
+                                                  setState(() {
+                                                    vADropYesState = state;
+                                                  });
+                                                }
+                                              }),
+                                        ),
+                                        Expanded(
+                                          child: MyCheckbox(
+                                            text: "NO",
+                                            value: vADropNoState,
+                                            onChanged: (state) {
+                                              if (state!) {
+                                                // set NO state and clear YES state
+                                                setState(() {
+                                                  vADropNoState = state;
+                                                  vADropYesState = !state;
+                                                });
+                                              } else {
+                                                // clear NO state only
+                                                setState(() {
+                                                  vADropNoState = state;
+                                                });
+                                              }
+                                            },
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            const Padding(
+                              padding:
+                                  EdgeInsets.only(left: 8.0, right: 8.0, top: 10),
+                              child: DividedSection(
+                                text: "Color",
+                              ),
+                            ),
+                            // Rt - Normal, AbNormal
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8, right: 8),
+                              child: Row(
+                                children: [
+                                  const Text(
+                                    "Rt.",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                      value: colorRtNormalState,
+                                      onChanged: (state) {
+                                        if (state!) {
+                                          setState(() {
+                                            // set normal state and clear abnormal state
+                                            colorRtNormalState =
+                                                state; // normal state
+                                            colorRtAbnormalState =
+                                                !state; // abnormal state
+                                          });
+                                        } else {
+                                          setState(() {
+                                            // clear normal state only
+                                            colorRtNormalState = state;
+                                          });
+                                        }
+                                      },
+                                      text: "Normal",
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                      value: colorRtAbnormalState,
+                                      onChanged: (state) {
+                                        if (state!) {
+                                          setState(() {
+                                            // set abnormal state and clear normal state
+                                            colorRtAbnormalState =
+                                                state; // normal state
+                                            colorRtNormalState =
+                                                !state; // abnormal state
+                                          });
+                                        } else {
+                                          setState(() {
+                                            // clear abnormal state only
+                                            colorRtAbnormalState = state;
+                                          });
+                                        }
+                                      },
+                                      text: "Abnormal",
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, right: 8.0),
+                              child: Row(
+                                children: [
+                                  const Text(
+                                    "Lt.",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                      value: colorLtNormalState,
+                                      onChanged: (state) {
+                                        if (state!) {
+                                          // set Lt Normal state and clear Lt Abnormal state
+                                          setState(() {
+                                            colorLtNormalState = state;
+                                            colorLtAbnormalState = !state;
+                                          });
+                                        } else {
+                                          // clear Lt Normal state only
+                                          setState(() {
+                                            colorLtNormalState = state;
+                                          });
+                                        }
+                                      },
+                                      text: "Normal",
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                      value: colorLtAbnormalState,
+                                      onChanged: (state) {
+                                        if (state!) {
+                                          // set Lt Abnormal state and clear Lt Normal state
+                                          setState(() {
+                                            colorLtAbnormalState = state;
+                                            colorLtNormalState = !state;
+                                          });
+                                        } else {
+                                          // clear Lt Abnormal only
+                                          setState(() {
+                                            colorLtAbnormalState = state;
+                                          });
+                                        }
+                                      },
+                                      text: "Abnormal",
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            // Optic - nerve
+                            const Padding(
+                              padding:
+                                  EdgeInsets.only(left: 8.0, right: 8.0, top: 10),
+                              child: DividedSection(
+                                text: "Optic nerve",
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, right: 8.0),
+                              child: Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 90,
+                                    child: Text(
+                                      'Rt. edema',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                        text: "YES",
+                                        value: opticNerveRtEdemaYesState,
+                                        onChanged: (state) {
+                                          if (state!) {
+                                            // set Rt. edema Yes state and clear Rt. edema No state
+                                            setState(() {
+                                              opticNerveRtEdemaYesState = state;
+                                              opticNerveRtEdemaNoState = !state;
+                                            });
+                                          } else {
+                                            // clear Rt. edema Yes state
+                                            setState(() {
+                                              opticNerveRtEdemaYesState = state;
+                                            });
+                                          }
+                                        }),
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                        text: "NO",
+                                        value: opticNerveRtEdemaNoState,
+                                        onChanged: (state) {
+                                          if (state!) {
+                                            // set Rt. edema No state and clear Rt. edema Yes state
+                                            setState(() {
+                                              opticNerveRtEdemaNoState = state;
+                                              opticNerveRtEdemaYesState = !state;
+                                            });
+                                          } else {
+                                            // clear Rt. edema No state only
+                                            setState(() {
+                                              opticNerveRtEdemaNoState = state;
+                                            });
+                                          }
+                                        }),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, right: 8.0),
+                              child: Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 90,
+                                    child: Text(
+                                      'Lt. edema',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                        text: "YES",
+                                        value: opticNerveLtEdemaYesState,
+                                        onChanged: (state) {
+                                          if (state!) {
+                                            // set Lt. edema Yes state and clear Lt. edema No state
+                                            setState(() {
+                                              opticNerveLtEdemaYesState = state;
+                                              opticNerveLtEdemaNoState = !state;
+                                            });
+                                          } else {
+                                            // clear Lt. edema Yes state only
+                                            setState(() {
+                                              opticNerveLtEdemaYesState = state;
+                                            });
+                                          }
+                                        }),
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                        text: "NO",
+                                        value: opticNerveLtEdemaNoState,
+                                        onChanged: (state) {
+                                          if (state!) {
+                                            // set Lt. edema No state and clear Lt. edema Yes state
+                                            setState(() {
+                                              opticNerveLtEdemaNoState = state;
+                                              opticNerveLtEdemaYesState = !state;
+                                            });
+                                          } else {
+                                            // clear Lt. edema No state only
+                                            setState(() {
+                                              opticNerveLtEdemaNoState = state;
+                                            });
+                                          }
+                                        }),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 8.0, right: 8.0, top: 10),
+                              child: Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 90,
+                                    child: Text(
+                                      'Rt. pale',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                        text: "YES",
+                                        value: opticNerveRtPaleYesState,
+                                        onChanged: (state) {
+                                          if (state!) {
+                                            // set Rt. pale Yes state and clear Rt. pale No state
+                                            setState(() {
+                                              opticNerveRtPaleYesState = state;
+                                              opticNerveRtPaleNoState = !state;
+                                            });
+                                          } else {
+                                            // clear Rt. pale Yes state only
+                                            setState(() {
+                                              opticNerveRtPaleYesState = state;
+                                            });
+                                          }
+                                        }),
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                        text: "NO",
+                                        value: opticNerveRtPaleNoState,
+                                        onChanged: (state) {
+                                          if (state!) {
+                                            // set Rt. pale No state and clear Rt. pale Yes state
+                                            setState(() {
+                                              opticNerveRtPaleNoState = state;
+                                              opticNerveRtPaleYesState = !state;
+                                            });
+                                          } else {
+                                            // clear Rt. pale No state only
+                                            setState(() {
+                                              opticNerveRtPaleNoState = state;
+                                            });
+                                          }
+                                        }),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, right: 8.0),
+                              child: Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 90,
+                                    child: Text(
+                                      'Lt. pale',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                        text: "YES",
+                                        value: opticNerveLtPaleYesState,
+                                        onChanged: (state) {
+                                          if (state!) {
+                                            // set Lt. pale Yes state and clear Lt. pale No state
+                                            setState(() {
+                                              opticNerveLtPaleYesState = state;
+                                              opticNerveLtPaleNoState = !state;
+                                            });
+                                          } else {
+                                            // clear Lt. pale Yes state only
+                                            setState(() {
+                                              opticNerveLtPaleYesState = state;
+                                            });
+                                          }
+                                        }),
+                                  ),
+                                  Expanded(
+                                    child: MyCheckbox(
+                                        text: "No",
+                                        value: opticNerveLtPaleNoState,
+                                        onChanged: (state) {
+                                          if (state!) {
+                                            // set Lt. pale No state and clear Lt. pale Yes state
+                                            setState(() {
+                                              opticNerveLtPaleNoState = state;
+                                              opticNerveLtPaleYesState = !state;
+                                            });
+                                          } else {
+                                            // clear Lt. pale No state only
+                                            setState(() {
+                                              opticNerveLtPaleNoState = state;
+                                            });
+                                          }
+                                        }),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            // Conea
+                            const Padding(
+                              padding:
+                                  EdgeInsets.only(left: 8.0, right: 8.0, top: 10),
+                              child: DividedSection(
+                                text: "Coneas",
+                              ),
+                            ),
+                            const Padding(
+                              padding:
+                                  EdgeInsets.only(left: 8.0, right: 8.0, top: 5),
+                              child: Text(
+                                'พบว่ามี exposure keratitis หรือ corneal abrasion หรือ corneal ulcev จากภาวะไทรอยด์ขึ้นตา',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 8, right: 8, top: 10),
+                              child: Row(
+                                children: [
+                                  MyCheckbox(
+                                      text: "YES",
+                                      value: corneaYesState,
+                                      onChanged: (state) {
+                                        if (state!) {
+                                          // set cornea Yes state and clear cornea No state
+                                          setState(() {
+                                            corneaYesState = state;
+                                            corneaNoState = !state;
+                                          });
+                                        } else {
+                                          // clear cornea Yes state only
+                                          setState(() {
+                                            corneaYesState = state;
+                                          });
+                                        }
+                                      }),
+                                  const SizedBox(
+                                    width: 40,
+                                  ),
+                                  MyCheckbox(
+                                      text: "NO",
+                                      value: corneaNoState,
+                                      onChanged: (state) {
+                                        if (state!) {
+                                          // set cornea No state and clear cornea Yes state
+                                          setState(() {
+                                            corneaNoState = state;
+                                            corneaYesState = !state;
+                                          });
+                                        } else {
+                                          // clear cornea No state
+                                          setState(() {
+                                            corneaNoState = state;
+                                          });
+                                        }
+                                      }),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   )
